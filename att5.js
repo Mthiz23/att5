@@ -2,10 +2,12 @@ const numero = Math.floor(Math.random() * 100);
 console.log(numero)
 let tentativas = 0;
 
-document.getElementById("nyrButton").addEventListener("click", function advinhe() {
+document.getElementById("nyrButton").addEventListener("click", function advinhe() {  
     tentativas++;
     document.getElementById("tentativanumero").textContent = "Tentativas: " + tentativas;
     const advinhe = document.getElementById("nyrAdvinhe").value
+
+advinhe();
 
     if (advinhe == numero)
         alert("você acertou")
@@ -13,4 +15,6 @@ document.getElementById("nyrButton").addEventListener("click", function advinhe(
         alert("O número que você digitou é menor")
     else if (advinhe > numero)
         alert("O número que você digitou é maior")
-}) 
+});
+
+document.getElementById("nyrReiniciar").addEventListener("click", advinhe);
